@@ -10,3 +10,219 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body{
+    background-color: rgba(2, 2, 48, 0.842);
+    box-sizing: 0;
+}
+
+.MainContainer{
+    padding: 2vw;
+    margin-top: 2vw;
+    background-color: rgb(0 0 0 /.5);
+    width: 70vw;
+    height: 60vw;
+    grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    overflow: hidden;
+}
+
+.TraficLight{
+    border: 1vw solid black;
+    border-radius: 5vw;
+    padding: 1vw;
+    background-color: rgba(255, 174, 0, 0.514);
+    height: 33vw;
+    width: 30vw;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+    'upper'
+    'mid'
+    'lower'
+    ;
+    margin: 2vw;
+    row-gap: none;
+    gap: 0;
+}
+
+.RedContainer{
+    grid-area: upper;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+.YellowContainer{
+    grid-area: mid;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+.GreenContainer{
+    grid-area: lower;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+.RedLight{
+    margin: .25vw;
+    border: .5vw solid rgba(0, 0, 0, 0.712);
+    outline: .2vw solid rgba(0, 0, 0, 0.548);
+    height: 8vw;
+    width: 8vw;
+    background:radial-gradient( red, rgba(255, 0, 0, 0.75), rgba(255, 0, 0, 0.50), rgba(255, 0, 0, 0.25));
+    border-radius: 50%;
+    box-shadow:  0px -4vw 8vw red;
+}
+
+.lightOff{
+    margin: .25vw;
+    border: .5vw solid rgba(0, 0, 0, 0.712);
+    outline: .2vw solid rgba(0, 0, 0, 0.548);
+    height: 8vw;
+    width: 8vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    transition: ease 300ms;
+}
+
+
+.YellowLight{
+    margin: .25vw;
+    border: .5vw solid rgba(0, 0, 0, 0.712);
+    outline: .2vw solid rgba(0, 0, 0, 0.548);
+    height: 8vw;
+    width: 8vw;
+    border-radius: 50%;
+    background:radial-gradient( rgb(255, 187, 0), rgba(255, 187, 0, 0.75), rgba(255, 187, 0, 0.50), rgba(255, 187, 0, 0.25));
+    box-shadow:  0px 0rem 8vw yellow;
+}
+.AmberLight{
+    margin: .25vw;
+    border: .5vw solid rgba(0, 0, 0, 0.712);
+    outline: .2vw solid rgba(0, 0, 0, 0.548);
+    height: 8vw;
+    width: 8vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    transition: ease 300ms;
+    animation: ambar 600ms steps(24) infinite;
+    
+}
+@keyframes ambar{
+    0%{
+        background:radial-gradient( rgb(255, 187, 0), rgba(255, 187, 0, 0.75), rgba(255, 187, 0, 0.50), rgba(255, 187, 0, 0.25));
+        box-shadow:  0px 0rem 8vw yellow;
+    }
+    100%{    background-color: rgba(0, 0, 0, 0.8);
+
+    }
+}
+
+.GreenLight{
+    margin: .25vw;
+    border: .5vw solid rgba(0, 0, 0, 0.712);
+    outline: .2vw solid rgba(0, 0, 0, 0.548);
+    height: 8vw;
+    width: 8vw;
+    border-radius: 50%;
+    background:radial-gradient( rgb(0, 255, 21), rgba(0, 255, 21, 0.75),rgba(0, 255, 21, 0.50), rgba(0, 255, 21, 0.25));
+    box-shadow:  0px 4vw 8vw rgb(0, 255, 21);
+}
+.BGLabel{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .2vw;
+    font-size: 1.1vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom: .1vw solid black;
+}
+.ButtonGroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 15vw;
+    border: 0.5vw solid black;
+    outline: 0.5vw solid gray;
+    padding: .25vw;
+    border-radius: .75vw;
+    background-color: rgb(255, 187, 0) ;
+}
+
+.SwitchButtonGroup{
+    margin: .5vw;
+    padding: .5vw;
+}
+.SwitchButton{
+    background-color: rgb(0, 0, 0, 0.8);
+    color: aliceblue;
+    text-transform:capitalize;
+    text-align: center;
+    font-size: 1.1vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    width:5vw;
+    padding: .5vw;
+    margin: .25vw;
+    border: none;
+    border-radius: .5vw;
+    font-weight: bold;
+    letter-spacing: .2vw;
+    transition: 200ms ease;
+}
+
+.SwitchButton:hover{
+    background-color: rgba(69, 116, 25, 0.5) ;
+    scale: 1.1;
+}
+.LowerButtonGroup{
+    display: flex;
+    flex-direction: column;
+}
+.StopButton{
+    background-color: rgb(0, 0, 0, 0.8);
+    color: aliceblue;
+    text-transform:capitalize;
+    width:15vw;
+    padding: .25vw;
+    margin: .25vw;
+    border: none;
+    border-radius: .5vw;
+    font-weight: bold;
+    font-size: 1.1vw;
+    letter-spacing: .2vw;
+    transition: 200ms ease;
+
+}
+.StopButton:hover{
+    background-color: rgba(180, 0, 0, 0.8) ;
+    scale: 1.1;
+}
+.AutoButton{
+    background-color: rgb(0, 0, 0, 0.8);
+    color: aliceblue;
+    text-transform:capitalize;
+    width:15vw;
+    padding: .25vw;
+    margin: .25vw;
+    border: none;
+    border-radius: .5vw;
+    font-weight: bold;
+    font-size: 1.1vw;
+    letter-spacing: .2vw;
+    transition: 200ms ease;
+}
+
+.AutoButton:hover{
+    color: black;
+    background-color: rgba(48, 255, 7, 0.726) ;
+    scale: 1.1;
+}
